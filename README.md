@@ -71,8 +71,8 @@ same pull request that follows the domain switch.
 
 ## Pointing sequentia.io at this site
 
-1. **DNS**, at the registrar of `sequentia.io` (replace the records that point at the current host;
-   leave `docs` and every other subdomain alone):
+1. **DNS**, in Namecheap for `sequentia.io` (replace the `@` and `www` records that point at Framer;
+   keep the Google mail (`MX`) records, and leave `docs` and every other subdomain alone):
 
    | Name | Type | Value |
    |---|---|---|
