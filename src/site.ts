@@ -1,4 +1,4 @@
-// While the site is a preview, every page sends noindex. Set to false when sequentia.io points here.
+// true makes every page send noindex (a preview); false for the live site.
 export const PREVIEW = false;
 
 // A path inside this site, under whatever base the build serves from.

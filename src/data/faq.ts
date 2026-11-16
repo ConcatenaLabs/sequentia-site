@@ -1,6 +1,6 @@
 // The questions on the home page. Each answer is HTML; keep it to what is true of Sequentia as it
 // runs now, and link docs.sequentia.io for depth.
-import { DOCS, TESTNET } from '../site';
+import { DOCS, TESTNET, CONCATENA } from '../site';
 
 export interface Faq {
   q: string;
@@ -99,8 +99,8 @@ export const FAQ: Faq[] = [
     a: `<p>Ambra is the wallet Concatena Labs builds for Sequentia, and its reference for what a
       Sequentia wallet should be. One recovery phrase holds bitcoin on Bitcoin and assets on Sequentia
       side by side, and fees can be paid in the asset being sent.</p>
-      <p>Ambra for Android runs on Bitcoin testnet4 and the Sequentia testnet. Download it from the
-      <a href="${TESTNET}/download/core/">testnet download page</a>.</p>`,
+      <p>Ambra for Android runs on Bitcoin testnet4 and the Sequentia testnet. Download it from
+      <a href="${CONCATENA}/ambra/">Ambra's site</a>.</p>`,
   },
   {
     q: "What's the smart contract language or script system used by Sequentia?",
@@ -112,7 +112,7 @@ export const FAQ: Faq[] = [
     q: 'What are the steps to get started with Sequentia?',
     a: `<ol>
       <li>Open the <a href="${TESTNET}/wallet/">web wallet</a>, or install
-        <a href="${TESTNET}/download/core/">Ambra for Android</a>.</li>
+        <a href="${CONCATENA}/ambra/">Ambra for Android</a>.</li>
       <li>Get free test bitcoin and Sequentia assets from the <a href="${TESTNET}/faucet">faucet</a>.</li>
       <li>Send, receive and pay fees in any asset, and follow your transactions on the
         <a href="${TESTNET}/explorer/">block explorer</a>.</li>
