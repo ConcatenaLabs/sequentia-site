@@ -10,7 +10,8 @@ interface Props {
   description: string;
 }
 const { title, description } = Astro.props;
-const canonical = new URL(Astro.url.pathname, Astro.site);
+// The 404 page is served at every missing address, so it names no address of its own.
+const canonical = /\/404(\.html)?\/?$/.test(Astro.url.pathname) ? null : new URL(Astro.url.pathname, Astro.site);
 ---
 
 <!doctype html>
@@ -21,13 +22,13 @@ const canonical = new URL(Astro.url.pathname, Astro.site);
     <title>{title}</title>
     <meta name="description" content={description} />
     {PREVIEW && <meta name="robots" content="noindex, nofollow" />}
-    <link rel="canonical" href={canonical} />
+    {canonical && <link rel="canonical" href={canonical} />}
     <link rel="icon" type="image/png" href={url('favicon.png')} />
     <meta name="theme-color" content="#141414" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
-    <meta property="og:url" content={canonical} />
+    {canonical && <meta property="og:url" content={canonical} />}
     <meta property="og:image" content={new URL(url('img/sequentia-mark.png'), Astro.site)} />
   </head>
   <body>
