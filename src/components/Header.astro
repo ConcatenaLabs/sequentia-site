@@ -1,0 +1,35 @@
+---
+import { url, DOCS, CONCATENA } from '../site';
+const links = [
+  { href: CONCATENA, label: 'Concatena Labs' },
+  { href: url('#ecosystem'), label: 'Ecosystem' },
+  { href: url('#faq'), label: 'FAQ' },
+  { href: url('#community'), label: 'Community' },
+];
+---
+
+<header class="site-header">
+  <div class="wrap bar">
+    <a class="logo" href={url()} aria-label="Sequentia, home">
+      <img src={url('img/sequentia-wordmark.svg')} alt="Sequentia" width="160" height="33" />
+    </a>
+    <nav aria-label="Main">
+      {links.map((l) => <a href={l.href}>{l.label}</a>)}
+      <a class="btn primary" href={DOCS}>Documentation <span class="arrow" aria-hidden="true">&#8594;</span></a>
+    </nav>
+    <details class="menu">
+      <summary>Menu</summary>
+      <div class="panel">
+        {links.map((l) => <a href={l.href}>{l.label}</a>)}
+        <a href={DOCS}>Documentation</a>
+      </div>
+    </details>
+  </div>
+</header>
+
+<script>
+  // Close the phone menu once a link in it is followed, so it does not cover the section it opened.
+  document.querySelectorAll<HTMLAnchorElement>('.menu .panel a').forEach((a) =>
+    a.addEventListener('click', () => a.closest('details')?.removeAttribute('open')),
+  );
+</script>

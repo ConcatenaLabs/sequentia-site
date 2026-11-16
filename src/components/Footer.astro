@@ -1,0 +1,20 @@
+---
+import { url, CONCATENA, CONTACT, DOCS, TESTNET } from '../site';
+const year = new Date().getUTCFullYear();
+---
+
+<footer class="site-footer">
+  <div class="wrap bar">
+    <div class="by">
+      <a href={CONCATENA} aria-label="Concatena Labs">
+        <img src={url('img/concatena-labs-wordmark.png')} alt="Concatena Labs" width="137" height="18" />
+      </a>
+      <span>&copy; {year} Concatena Labs, Inc.</span>
+    </div>
+    <nav aria-label="Footer">
+      <a href={DOCS}>Documentation</a>
+      <a href={TESTNET}>Testnet</a>
+      <a href={`mailto:${CONTACT}`}>{CONTACT}</a>
+    </nav>
+  </div>
+</footer>

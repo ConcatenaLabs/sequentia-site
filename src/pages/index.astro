@@ -1,0 +1,180 @@
+---
+import Base from '../layouts/Base.astro';
+import { FAQ } from '../data/faq';
+import { url, DOCS, TESTNET, SOCIALS } from '../site';
+
+// Line icons for the ecosystem cards that have no screenshot, drawn on a 24-unit grid.
+const ICON = {
+  wallet: '<rect x="3" y="6" width="18" height="14" rx="2.5"/><path d="M3 10h18"/><path d="M16 15h2"/><path d="M6 6l9-3 1.5 3"/>',
+  layers: '<path d="M12 3l9 5-9 5-9-5 9-5z"/><path d="M3 12.5l9 5 9-5"/><path d="M3 16.5l9 5 9-5"/>',
+  bridge: '<path d="M2 17h20"/><path d="M4 17v-3a8 8 0 0 1 16 0v3"/><path d="M12 9v8M8 10.2V17M16 10.2V17"/>',
+  star: '<path d="M12 3.2l2.7 5.5 6.1.9-4.4 4.3 1 6.1L12 17.1 6.6 20l1-6.1-4.4-4.3 6.1-.9z"/>',
+  server: '<rect x="4" y="4" width="16" height="7" rx="1.5"/><rect x="4" y="13" width="16" height="7" rx="1.5"/><path d="M8 7.5h.01M8 16.5h.01M12 7.5h4M12 16.5h4"/>',
+};
+
+const ecosystem = [
+  {
+    name: 'Web wallet',
+    text: 'Hold, send and trade BTC and every Sequentia asset, in your browser.',
+    href: `${TESTNET}/wallet/`,
+    go: 'Open',
+    icon: ICON.wallet,
+  },
+  {
+    name: 'Ambra wallet',
+    text: 'A self-custodial, open-source Android wallet for your bitcoin and your tokenized assets on Sequentia.',
+    href: `${TESTNET}/download/core/`,
+    go: 'Download',
+    img: 'img/ecosystem-ambra.png',
+  },
+  {
+    name: 'Block explorer',
+    text: "Look up any block, transaction or asset on Sequentia's testnet.",
+    href: `${TESTNET}/explorer/`,
+    go: 'Explorer',
+    img: 'img/ecosystem-explorer.png',
+  },
+  {
+    name: 'Sequentia faucet',
+    text: 'Free test bitcoin and Sequentia assets for any wallet.',
+    href: `${TESTNET}/faucet`,
+    go: 'Faucet',
+    img: 'img/ecosystem-faucet.png',
+  },
+  {
+    name: 'Staking pools',
+    text: 'Compare block producers and pick one to stake your Sequence tokens with.',
+    href: `${TESTNET}/pools/`,
+    go: 'Pools',
+    icon: ICON.layers,
+  },
+  {
+    name: 'Compages',
+    text: 'Bring assets in from Ethereum, Bitcoin and Solana.',
+    href: `${TESTNET}/bridge/`,
+    go: 'Compages',
+    icon: ICON.bridge,
+  },
+  {
+    name: 'Emissio',
+    text: 'Earn the Sequence token (SEQ) by testing the network.',
+    href: `${TESTNET}/emissio/`,
+    go: 'Emissio',
+    icon: ICON.star,
+  },
+  {
+    name: 'Sequentia Core',
+    text: 'The full node and desktop wallet, for Linux and Windows.',
+    href: `${TESTNET}/download/core/`,
+    go: 'Download',
+    icon: ICON.server,
+  },
+];
+---
+
+<Base
+  title="Sequentia: a Bitcoin sidechain for asset tokenization and disintermediated exchanges"
+  description="Sequentia is a Bitcoin sidechain for asset tokenization and disintermediated exchanges: issue stablecoins and stock tokens, pay fees in any asset, and swap them for BTC on Bitcoin."
+>
+  <section class="hero" style={`--hero-image: url('${url('img/hero-background.jpg')}')`}>
+    <div class="inner">
+      <span class="kicker">Bitcoin unlocked</span>
+      <h1>Building the engine of hyper&shy;bitcoinization</h1>
+      <p class="lede">
+        <b>Sequentia is a Bitcoin sidechain for asset tokenization and disintermediated exchanges.</b>
+        Stablecoins, stock tokens and any other asset issued on it swap peer to peer for BTC on Bitcoin,
+        atomically and in real time.
+      </p>
+      <div class="actions">
+        <a class="btn primary" href={DOCS}>Documentation <span class="arrow" aria-hidden="true">&#8594;</span></a>
+        <a class="btn ghost" href={TESTNET}>Try the testnet</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section wrap" id="features" aria-labelledby="features-title">
+    <div class="section-head">
+      <span class="kicker" id="features-title">Key features</span>
+    </div>
+    <div class="features">
+      <div class="feature">
+        <svg viewBox="0 0 44 44" aria-hidden="true" fill="none"><path d="M22 14c3.3 0 6-2.7 6-6s-2.7-6-6-6-6 2.7-6 6 2.7 6 6 6zm0 0v28m0 0c-5.3 0-10.4-2.1-14.1-5.9C4.1 32.4 2 27.3 2 22h6m14 20c5.3 0 10.4-2.1 14.1-5.9C39.9 32.4 42 27.3 42 22h-6" stroke="#FDC31C" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+        <h3>Bitcoin anchoring</h3>
+        <p>Every block references a Bitcoin block header, and Sequentia follows Bitcoin's reorganizations in
+          real time. Apart from that, finality is immediate.</p>
+      </div>
+      <div class="feature">
+        <svg viewBox="0 0 44 44" aria-hidden="true" fill="none"><circle cx="22" cy="22" r="19" stroke="#FDC31C" stroke-width="4"></circle><path d="M17 13v18m4-18v-3m0 24v-3m-4-9h8.5a4.5 4.5 0 0 0 0-9H15m2 9h9.5a4.5 4.5 0 0 1 0 9H15" stroke="#FDC31C" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+        <h3>Bitcoin itself</h3>
+        <p>Hold BTC on Bitcoin and assets on Sequentia side by side, on one address, and swap between them
+          atomically. Your bitcoin stays on Bitcoin.</p>
+      </div>
+      <div class="feature">
+        <svg viewBox="0 0 44 44" aria-hidden="true" fill="none"><rect x="3" y="9" width="38" height="26" rx="5" stroke="#FDC31C" stroke-width="4"></rect><circle cx="16" cy="22" r="5" stroke="#FDC31C" stroke-width="3"></circle><circle cx="28" cy="22" r="5" stroke="#FDC31C" stroke-width="3"></circle></svg>
+        <h3>Any asset pays the fee</h3>
+        <p>Pay network fees in the asset you are sending, or in any other asset block producers accept.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section wrap" id="ecosystem" aria-labelledby="ecosystem-title">
+    <div class="section-head">
+      <span class="kicker">Ecosystem</span>
+      <h2 id="ecosystem-title">Testnet ecosystem</h2>
+      <p>The public testnet runs at <a href={TESTNET}>sequentiatestnet.com</a>, anchored to Bitcoin testnet4.
+        Coins and assets on it have no value. Sequentia's mainnet is not running yet.</p>
+    </div>
+    <div class="eco">
+      {
+        ecosystem.map((e) => (
+          <article class="eco-card">
+            {e.img ? (
+              <div class="shot">
+                <img src={url(e.img)} alt="" loading="lazy" width="640" height="400" />
+              </div>
+            ) : (
+              <div class="icon">
+                <svg viewBox="0 0 24 24" aria-hidden="true" set:html={e.icon} />
+              </div>
+            )}
+            <div class="body">
+              <h3>{e.name}</h3>
+              <p>{e.text}</p>
+              <a class="btn primary" href={e.href}>
+                {e.go} <span class="arrow" aria-hidden="true">&#8594;</span>
+              </a>
+            </div>
+          </article>
+        ))
+      }
+    </div>
+  </section>
+
+  <section class="section wrap" id="faq" aria-labelledby="faq-title">
+    <div class="section-head">
+      <span class="kicker">FAQ</span>
+      <h2 id="faq-title">Frequently asked questions</h2>
+    </div>
+    <div class="faq">
+      {
+        FAQ.map((f) => (
+          <details>
+            <summary>{f.q}</summary>
+            <div class="answer" set:html={f.a} />
+          </details>
+        ))
+      }
+    </div>
+  </section>
+
+  <section class="section wrap" id="community" aria-labelledby="community-title">
+    <div class="community">
+      <span class="kicker">Community</span>
+      <h2 id="community-title">Get in touch with us</h2>
+      <p>Join the Sequentia community for updates and news.</p>
+      <div class="socials">
+        {SOCIALS.map((s) => <a href={s.href}>{s.name}</a>)}
+      </div>
+    </div>
+  </section>
+</Base>
