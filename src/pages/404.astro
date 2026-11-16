@@ -1,0 +1,16 @@
+---
+import Base from '../layouts/Base.astro';
+import { url, DOCS } from '../site';
+---
+
+<Base title="Page not found: Sequentia" description="This page does not exist on sequentia.io.">
+  <section class="wrap lost">
+    <span class="kicker">404</span>
+    <h1>Page not found</h1>
+    <p>This address has no page. The documentation lives at docs.sequentia.io.</p>
+    <div class="actions">
+      <a class="btn primary" href={url()}>Home</a>
+      <a class="btn ghost" href={DOCS}>Documentation</a>
+    </div>
+  </section>
+</Base>
