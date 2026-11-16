@@ -82,12 +82,12 @@ const ecosystem = [
       <h1>Building the engine of hyper&shy;bitcoinization</h1>
       <p class="lede">
         <b>Sequentia is a Bitcoin sidechain for asset tokenization and disintermediated exchanges.</b>
-        Stablecoins, stock tokens and any other asset issued on it swap peer to peer for BTC on Bitcoin,
-        atomically and in real time.
+        Stablecoins, stock tokens and any other asset issued on it swap peer to peer for BTC, on Bitcoin
+        and over the Lightning Network, atomically and in real time.
       </p>
       <div class="actions">
         <a class="btn primary" href={DOCS}>Documentation <span class="arrow" aria-hidden="true">&#8594;</span></a>
-        <a class="btn ghost" href={TESTNET}>Try the testnet</a>
+        <a class="btn ghost" href="#video">Watch video</a>
       </div>
     </div>
   </section>
@@ -98,22 +98,31 @@ const ecosystem = [
     </div>
     <div class="features">
       <div class="feature">
-        <svg viewBox="0 0 44 44" aria-hidden="true" fill="none"><path d="M22 14c3.3 0 6-2.7 6-6s-2.7-6-6-6-6 2.7-6 6 2.7 6 6 6zm0 0v28m0 0c-5.3 0-10.4-2.1-14.1-5.9C4.1 32.4 2 27.3 2 22h6m14 20c5.3 0 10.4-2.1 14.1-5.9C39.9 32.4 42 27.3 42 22h-6" stroke="#FDC31C" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></path></svg>
-        <h3>Bitcoin anchoring</h3>
-        <p>Every block references a Bitcoin block header, and Sequentia follows Bitcoin's reorganizations in
-          real time. Apart from that, finality is immediate.</p>
+        <img src={url('img/feature-anchoring.svg')} alt="" width="44" height="44" />
+        <h3>Bitcoin Anchoring</h3>
+        <p>for faster and safer cross-chain P2P swaps with mainchain BTC</p>
       </div>
       <div class="feature">
-        <svg viewBox="0 0 44 44" aria-hidden="true" fill="none"><circle cx="22" cy="22" r="19" stroke="#FDC31C" stroke-width="4"></circle><path d="M17 13v18m4-18v-3m0 24v-3m-4-9h8.5a4.5 4.5 0 0 0 0-9H15m2 9h9.5a4.5 4.5 0 0 1 0 9H15" stroke="#FDC31C" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path></svg>
-        <h3>Bitcoin itself</h3>
-        <p>Hold BTC on Bitcoin and assets on Sequentia side by side, on one address, and swap between them
-          atomically. Your bitcoin stays on Bitcoin.</p>
+        <img src={url('img/feature-lightning.svg')} alt="" width="44" height="44" />
+        <h3>Lightning Enabled</h3>
+        <p>instant trades of assets on Sequentia with real, self-custodied BTC</p>
       </div>
       <div class="feature">
-        <svg viewBox="0 0 44 44" aria-hidden="true" fill="none"><rect x="3" y="9" width="38" height="26" rx="5" stroke="#FDC31C" stroke-width="4"></rect><circle cx="16" cy="22" r="5" stroke="#FDC31C" stroke-width="3"></circle><circle cx="28" cy="22" r="5" stroke="#FDC31C" stroke-width="3"></circle></svg>
-        <h3>Any asset pays the fee</h3>
-        <p>Pay network fees in the asset you are sending, or in any other asset block producers accept.</p>
+        <img src={url('img/feature-any-asset-fee.svg')} alt="" width="44" height="44" />
+        <h3>No shitCOIN</h3>
+        <p>use any asset on Sequentia to pay for transaction fees</p>
       </div>
+    </div>
+  </section>
+
+  <section class="section wrap" id="video" aria-label="Video">
+    <div class="video">
+      <iframe
+        src="https://www.youtube-nocookie.com/embed/f3HsQs4mA4k"
+        title="Sequentia video"
+        loading="lazy"
+        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen></iframe>
     </div>
   </section>
 

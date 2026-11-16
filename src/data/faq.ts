@@ -39,10 +39,10 @@ export const FAQ: Faq[] = [
   },
   {
     q: 'Who are the "miners" or block producers in Sequentia?',
-    a: `<p>Sequentia uses proof of stake. Block producers are holders of the Sequence token (SEQ) who
-      stake it: each block is proposed by an elected leader and certified by a committee of stakers,
-      and a certified block is final at once, unless the Bitcoin block it is anchored to is
-      reorganized away.</p>
+    a: `<p>Sequentia's blocks are produced by an open federation: anyone who stakes the Sequence token
+      (SEQ) can join it, where Liquid's blocks come from a closed federation of fixed members. Each
+      block is proposed by an elected leader and certified by a committee of stakers, and a certified
+      block is final at once, unless the Bitcoin block it is anchored to is reorganized away.</p>
       <p>A stake needs at least 40,000 SEQ, one hundredth of a percent of the supply. Holders with
       less can join a staking pool. Producers earn the transaction fees of their blocks, and the
       supply of SEQ is fixed.</p>
@@ -72,15 +72,21 @@ export const FAQ: Faq[] = [
       <li><b>Bitcoin anchoring.</b> Every Sequentia block references a Bitcoin block header, and the
         chain follows Bitcoin's reorganizations in real time. Assets therefore swap directly for
         bitcoin on Bitcoin.</li>
-      <li><b>Proof of stake.</b> Blocks are produced by stakers of the Sequence token (SEQ) instead
-        of a fixed federation. All 400 million SEQ exist from genesis, and producers earn the
-        fees.</li>
+      <li><b>An open federation.</b> Blocks are produced by anyone who stakes the Sequence token
+        (SEQ), where Liquid has a closed federation. All 400 million SEQ exist from genesis, and
+        producers earn the fees.</li>
+      <li><b>Bitcoin on Bitcoin.</b> A wallet holds BTC on Bitcoin itself and swaps it directly for
+        Sequentia assets, where Liquid moves bitcoin as L-BTC, pegged in and out through its
+        federation.</li>
       <li><b>Transparent by default.</b> Addresses are in Bitcoin's own format, so one address
         receives both BTC and Sequentia assets. Confidential transactions are a choice the holder
         makes for each transfer.</li>
     </ul>
-    <p>A pegged bitcoin, SBTC, exists as an opt-in for those who want one, issued by a multisig
-      bridge.</p>`,
+    <p>Most people therefore never need a pegged bitcoin on Sequentia. Anyone can still issue one,
+      as an asset backed by bitcoin its issuer holds. It is useful only where bitcoin's value has to
+      sit on Sequentia itself: in a confidential transaction, which hides amounts only within
+      Sequentia, or in a contract that settles on Sequentia alone, such as an order that rests in a
+      book while its owner is offline.</p>`,
   },
   {
     q: 'What is the Sequence token (SEQ)?',
